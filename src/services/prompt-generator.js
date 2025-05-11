@@ -4,7 +4,7 @@
  * Responsable de la génération automatique de nouveaux prompts
  */
 
-const { OpenAI } = require('openai');
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { generatePromptImage } = require('../utils/image-generator');
 const { formatForAPI } = require('../utils/formatters');
 const { sendNotification } = require('../utils/notifications');
@@ -17,10 +17,9 @@ class PromptGenerator {
   constructor(api) {
     this.api = api;
     
-    // Initialiser l'API OpenAI pour la génération de prompts
-    this.openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY
-    });
+    // Initialiser l'API Gemini pour la génération de prompts
+    this.genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    this.geminiModel = this.genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
     
     // Catégories de prompts et leurs caractéristiques
     this.categories = {
@@ -230,10 +229,9 @@ class PromptGenerator {
    */
   async generatePromptForNiche(niche) {
     try {
-      // Dans une implémentation réelle, on utiliserait OpenAI pour générer un prompt complet
-      // Pour ce prototype, nous simulons la génération avec l'API OpenAI
+      // Utilisation de l'API Gemini pour générer un prompt complet
       
-      // Créer le prompt pour OpenAI
+      // Créer le prompt pour Gemini
       const promptTemplate = `
 Tu es un expert en création de prompts IA pour des professionnels. Crée un prompt premium pour la niche "${niche.name}" dans la catégorie "${niche.category}".
 
@@ -260,16 +258,11 @@ Le prompt doit être:
 5. Générer de la valeur quantifiable (gain de temps, augmentation des revenus, etc.)
 `;
       
-      // Générer le prompt avec OpenAI
-      const completion = await this.openai.completions.create({
-        model: "gpt-3.5-turbo-instruct",
-        prompt: promptTemplate,
-        max_tokens: 1000,
-        temperature: 0.7
-      });
+      // Générer le prompt avec Gemini
+      const result = await this.geminiModel.generateContent(promptTemplate);
+      const responseText = result.response.text().trim();
       
       // Parser la réponse JSON
-      const responseText = completion.choices[0].text.trim();
       const jsonStartIndex = responseText.indexOf('{');
       const jsonEndIndex = responseText.lastIndexOf('}') + 1;
       const jsonContent = responseText.substring(jsonStartIndex, jsonEndIndex);
