@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: prompt-business-automation
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongodb:27017/prompt-automation
+      - SNACKPROMPT_API_KEY=${SNACKPROMPT_API_KEY}
+      - SNACKPROMPT_SECRET_KEY=${SNACKPROMPT_SECRET_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - EMAIL_SERVICE=${EMAIL_SERVICE}
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+      - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL}
+      - MIN_PROMPT_PRICE=${MIN_PROMPT_PRICE:-25}
+      - MAX_PROMPT_PRICE=${MAX_PROMPT_PRICE:-150}
+      - DEFAULT_DISCOUNT_PERCENTAGE=${DEFAULT_DISCOUNT_PERCENTAGE:-15}
+      - MIN_BUNDLE_SIZE=${MIN_BUNDLE_SIZE:-3}
+    volumes:
+      - ./config:/usr/src/app/config
+      - app_logs:/usr/src/app/logs
+    depends_on:
+      - mongodb
+    networks:
+      - prompt_network
+
+  mongodb:
+    image: mongo:6
+    container_name: prompt-mongodb
+    restart: always
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - prompt_network
+
+  nginx:
+    image: nginx:alpine
+    container_name: prompt-nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/ssl:/etc/nginx/ssl
+      - ./nginx/www:/var/www/html
+    depends_on:
+      - app
+    networks:
+      - prompt_network
+
+volumes:
+  mongodb_data:
+  app_logs:
+
+networks:
+  prompt_network:
+    driver: bridge
