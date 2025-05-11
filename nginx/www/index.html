@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système d'Automatisation de Vente de Prompts IA</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .status-indicator {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #2ecc71;
+            margin-right: 10px;
+        }
+        .card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Système d'Automatisation de Vente de Prompts IA</h1>
+        <p>Une solution entièrement automatisée pour gérer, optimiser et vendre des prompts d'IA</p>
+        <div class="status">
+            <div class="status-indicator"></div>
+            <span>Système en ligne et opérationnel</span>
+        </div>
+    </header>
+
+    <div class="card">
+        <h2>À propos du système</h2>
+        <p>Cette plateforme permet l'automatisation complète de la vente de prompts IA sur SnackPrompt. Elle gère automatiquement :</p>
+        <ul>
+            <li>Génération et publication de nouveaux prompts</li>
+            <li>Optimisation des prix et descriptions</li>
+            <li>Service client automatisé</li>
+            <li>Analyses de performances</li>
+            <li>Promotions dynamiques</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Statut des composants</h2>
+        <ul>
+            <li><strong>API REST</strong> : Fonctionnelle</li>
+            <li><strong>Base de données</strong> : Connectée</li>
+            <li><strong>Webhooks</strong> : Actifs</li>
+            <li><strong>Tâches planifiées</strong> : En cours d'exécution</li>
+            <li><strong>Service d'IA</strong> : Opérationnel</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 - Système d'Automatisation de Vente de Prompts IA</p>
+    </footer>
+
+    <script>
+        // Script pour vérifier l'état du service et mettre à jour l'indicateur
+        fetch('/health')
+            .then(response => {
+                if (!response.ok) {
+                    document.querySelector('.status-indicator').style.backgroundColor = '#e74c3c';
+                    document.querySelector('.status span').textContent = 'Système hors ligne';
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data && data.status === 'ok') {
+                    const statusText = `Système en ligne - Dernière vérification: ${new Date().toLocaleTimeString()}`;
+                    document.querySelector('.status span').textContent = statusText;
+                }
+            })
+            .catch(error => {
+                document.querySelector('.status-indicator').style.backgroundColor = '#e74c3c';
+                document.querySelector('.status span').textContent = 'Système hors ligne';
+                console.error('Erreur lors de la vérification de l\'état:', error);
+            });
+    </script>
+</body>
+</html>
