@@ -1,0 +1,65 @@
+[
+  {
+    "id": "email-recovery",
+    "title": "Générateur d'Emails de Récupération Ultra-Personnalisés",
+    "description": "Transformez vos clients inactifs en acheteurs réguliers avec des emails ultra-personnalisés qui génèrent un taux de conversion 3-5x supérieur aux templates standards.",
+    "content": "Crée un email de réengagement ultra-personnalisé pour un client qui n'a pas acheté depuis [DURÉE] dans le secteur [INDUSTRIE]. Utilise les données suivantes: Dernier produit acheté: [PRODUIT], Valeur client: [MONTANT], Comportement précédent: [ACTIONS]. Inclus: 1) Objet captivant avec 2 variantes, 2) Introduction personnalisée avec référence implicite à leur historique, 3) Proposition de valeur spécifique à leur profil, 4) Incitation limitée dans le temps, 5) Call-to-action psychologiquement optimisé. Ton: conversationnel mais respectueux. Format: texte brut + version HTML.",
+    "category": "marketing",
+    "tags": ["email", "conversion", "e-commerce", "personnalisation", "rétention"],
+    "suggestedPrice": 45,
+    "variations": {
+      "titles": [
+        "Générateur d'Emails de Récupération Ultra-Personnalisés",
+        "Emails de Réengagement Client à Conversion 3X Supérieure",
+        "La Méthode Ultime pour Récupérer les Clients Perdus"
+      ],
+      "descriptions": [
+        "Transformez vos clients inactifs en acheteurs réguliers avec des emails ultra-personnalisés qui génèrent un taux de conversion 3-5x supérieur aux templates standards.",
+        "Récupérez jusqu'à 35% de vos clients dormants avec des emails qui parlent directement à leurs besoins et comportements d'achat spécifiques.",
+        "Des emails de récupération qui génèrent des résultats immédiats en utilisant la psychologie d'achat et la personnalisation avancée."
+      ]
+    }
+  },
+  {
+    "id": "linkedin-prospecting",
+    "title": "Analyseur de Profils LinkedIn pour Prospection B2B",
+    "description": "Identifiez instantanément les meilleurs angles d'approche commerciale à partir de profils LinkedIn, avec une analyse détaillée du pouvoir décisionnel et des préoccupations professionnelles actuelles.",
+    "content": "Analyse ce profil LinkedIn [COLLER PROFIL] et génère: 1) 3 points d'accroche personnels pour une prise de contact, 2) La structure d'entreprise probable et le processus décisionnel associé, 3) Les préoccupations professionnelles actuelles basées sur l'activité récente, 4) 2 scénarios d'utilisation de [VOTRE PRODUIT] adaptés spécifiquement à ses défis, 5) Un script d'appel/mail de 150 mots maximum avec référence subtile à ses publications/expériences. Format: sections clairement délimitées. Style: professionnel mais conversationnel.",
+    "category": "sales",
+    "tags": ["linkedin", "b2b", "prospection", "vente", "outreach"],
+    "suggestedPrice": 65,
+    "variations": {
+      "titles": [
+        "Analyseur de Profils LinkedIn pour Prospection B2B",
+        "Générateur de Stratégies de Contact B2B via LinkedIn",
+        "Assistant de Vente B2B : De LinkedIn à la Prise de Contact"
+      ],
+      "descriptions": [
+        "Identifiez instantanément les meilleurs angles d'approche commerciale à partir de profils LinkedIn, avec une analyse détaillée du pouvoir décisionnel et des préoccupations professionnelles actuelles.",
+        "Doublez vos taux de réponse en B2B avec une analyse qui révèle les motivations cachées, la position décisionnelle et les opportunités d'engagement pour chaque prospect LinkedIn.",
+        "Transformez de simples profils LinkedIn en stratégies de vente complètes avec points d'accroche personnalisés et scripts d'approche à fort taux de conversion."
+      ]
+    }
+  },
+  {
+    "id": "marketing-brief",
+    "title": "Convertisseur de Brief Marketing en Plan d'Exécution Multi-Canal",
+    "description": "Transformez rapidement des briefs marketing vagues en plans d'action concrets et détaillés, avec calendrier éditorial sur 30 jours et allocation budgétaire optimisée.",
+    "content": "Transforme ce brief marketing [COLLER BRIEF] en plan d'exécution détaillé. Structure: 1) Objectifs SMART reformulés et métriques de succès, 2) Persona cible avec points de friction et motivations, 3) Messages clés par étape du parcours client, 4) Calendrier éditorial sur 30 jours avec touchpoints spécifiques (réseaux sociaux, email, blog, etc.), 5) Budget recommandé par canal, 6) Ressources nécessaires (compétences/outils), 7) Risques potentiels et plans de mitigation. Format: tableau pour planning + sections narratives avec puces. Inclure 2-3 idées créatives innovantes qui dépassent le brief initial.",
+    "category": "marketing",
+    "tags": ["plan marketing", "stratégie", "calendrier éditorial", "brief", "multichannel"],
+    "suggestedPrice": 80,
+    "variations": {
+      "titles": [
+        "Convertisseur de Brief Marketing en Plan d'Exécution Multi-Canal",
+        "Générateur de Plans Marketing Opérationnels",
+        "Transformateur de Brief en Stratégie Marketing Actionnable"
+      ],
+      "descriptions": [
+        "Transformez rapidement des briefs marketing vagues en plans d'action concrets et détaillés, avec calendrier éditorial sur 30 jours et allocation budgétaire optimisée.",
+        "Passez du concept à l'exécution en minutes avec un plan marketing complet incluant touchpoints client, budget par canal et idées créatives innovantes.",
+        "Éliminez l'écart entre stratégie et exécution avec un plan marketing détaillé qui transforme les objectifs flous en actions concrètes et mesurables."
+      ]
+    }
+  }
+]
