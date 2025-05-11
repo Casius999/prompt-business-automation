@@ -1,0 +1,36 @@
+# Fichiers de développement
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Fichiers de configuration d'environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dossiers Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+nginx
+
+# Données locales
+data
+logs
+*.log
+
+# Système
+.git
+.github
+.DS_Store
+.vscode
+.idea
+
+# Documentation et fichiers divers
+README.md
+LICENSE
+docs
+tests
